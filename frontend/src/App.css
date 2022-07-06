@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.home_container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://i.postimg.cc/K8xtDxdB/background-gradient.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh;
+    gap: 1rem;
+}
+.header {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home_title {
+    color: white;
+    font-size: 4rem;
+}
+.input_search {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.input_search input {
+    outline: none;
+    border: 1px solid white;
+    padding-left: 10;
+    height: 8vh;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.input_search input::placeholder {
+    font-size: 1rem;
+    color: white;
+}
+.subtitle_input {
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+}
+.card_time {
+    width: 200px;
+    height: 120px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    color: black;
+    border-radius: 10;
+    border-radius: 10px;
+}
+.information_time {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.container_cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    width: 35%;
+    flex-wrap: wrap;
+}
+.suggestions_container {
+    width: 100%;
+    max-height: 20vh;
+    overflow: auto;
+}
+.suggestion_select {
+    color: white;
+    padding: 2px 4px;
+    width: 100%;
+}
+.suggestion_select:hover {
+    background-color: white;
+    color: black;
+}
+
+.time_and_date {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.time_title {
+    color: white;
+    font-size: 6rem;
+    font-weight: 600;
+}
+.date_container {
+    width: 15%;
+    padding: 15px 0px;
+}
+.date_title {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.spiner_container {
+    width: 200px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spiner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgb(167, 167, 167);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.add_icon {
+    cursor: pointer;
+    margin-top: -4px;
+    margin-left: -3px;
+}
+.pulse_effect {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.pulse_effect::before,
+.pulse_effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.512);
+    border-radius: 100%;
+}
+.pulse_effect::after {
+    animation: pulse 2s ease 0s infinite normal forwards;
+}
+
+@keyframes pulse {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(1.2);
+    }
+
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(1.4);
+    }
+
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1.7);
+    }
+}
+@media (max-width: 600px) {
+    .home_title {
+        font-size: 2rem;
+    }
+    .header {
+        width: 100%;
+    }
+    .input_search {
+        width: 100%;
+    }
+    .container_cards {
+        width: 100%;
+    }
+    .time_title {
+        font-size: 4rem;
+    }
+    .time_and_date {
+        flex-direction: column;
+    }
+    .date_container {
+        width: 100%;
+    }
+    .date_title {
+        text-align: center;
+    }
+    .home_container {
+        background-position: initial;
+    }
+}
